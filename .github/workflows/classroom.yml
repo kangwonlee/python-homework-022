@@ -77,7 +77,7 @@ jobs:
       with:
         test-name: test results
         setup-command: "docker run --rm --user 1001:1001 --volume ${{ github.workspace }}:${{ env.container_mounting_point }} ${{ env.image_url }} python3 -m pip list"
-        command:       "docker run --rm --user 1001:1001 --volume ${{ github.workspace }}:${{ env.container_mounting_point }} --env STUDENT_CODE_FOLDER=${{ env.container_student_code_folder }} ${{ env.image_url }} python3 -m pytest -n auto --json-report --json-report-indent=4 --json-report-file=${{ env.container_json_report_folder }}/${{ env.results }} ${{ env.container_test_code_folder }}/test_results.py" # Run test in container
+        command:       "docker run --rm --user 1001:1001 --volume ${{ github.workspace }}:${{ env.container_mounting_point }} --env STUDENT_CODE_FOLDER=${{ env.container_student_code_folder }} ${{ env.image_url }} xvfb-run --auto-servernum python3 -m pytest -n auto --json-report --json-report-indent=4 --json-report-file=${{ env.container_json_report_folder }}/${{ env.results }} ${{ env.container_test_code_folder }}/test_results.py" # Run test in container
         timeout: 2
         max-score: 2
 
