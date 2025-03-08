@@ -17,6 +17,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: set short sha
+      env:
+        GITHUB_SHA: ${{ github.sha }}
+      run: |
+        SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
+        echo "SHORT_SHA=$SHORT_SHA" >> $GITHUB_ENV
+
     - name: Check payload
       env:
         REPO: ${{ github.event.client_payload.repository }}
@@ -109,7 +116,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: artifacts
+        name: artifacts-${{ env.SHORT_SHA }}
         path: |
           ./*.png
           ./*.json
