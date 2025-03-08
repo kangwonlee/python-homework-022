@@ -88,6 +88,15 @@ jobs:
         timeout: 2
         max-score: 2
 
+    - name: Check if .json reports exist
+      run: |
+        if [ -f "${{ github.workspace }}/${{ env.results }}" ] && [ -f "${{ github.workspace }}/${{ env.syntax }}" ]; then
+          echo "JSON Report files exist."
+        else
+          echo "One or both JSON Report files are missing."
+          exit 1 # Fail the workflow if files are missing
+        fi
+
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
