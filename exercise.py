@@ -6,3 +6,5 @@ turtle.shape('turtle')
 # 여기에 turtle graphic을 구현하시오
 
 turtle.done()
+# Please call this function at the end
+# 마지막에 위 함수를 호출하시오
