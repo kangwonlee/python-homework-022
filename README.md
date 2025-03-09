@@ -13,6 +13,7 @@ Create a five-pointed star using Python's `turtle` module by writing code that c
 - Final turtle position must be near (0,0).<br>거북이의 최종 위치는 반드시 (0,0) 근처에 있어야 합니다.
 - Please download the PNG file from the `artifacts` of Github Actions and submit it, too.<br>Github Actions 의 `artifacts` 에서 PNG 파일도 다운로드하여 제출하세요.
 - Please call `turtle.done()` at the end of the program.<br>프로그램의 끝에 `turtle.done()` 함수를 호출하세요.
+- In this assignment, let's not use `for` iterations yet.<br>이번 과제에서는 `for` 반복문을 사용하지 않습니다.
 
 ## Submission<br>제출 방법
 1. Modify the contents of the `exercise.py` file to write your program.<br>`exercise.py` 파일의 내용을 수정하여 프로그램을 작성합니다.
