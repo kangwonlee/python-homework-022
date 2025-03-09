@@ -118,7 +118,7 @@ jobs:
           --env INPUT_API-KEY="${{ secrets.GOOGLE_API_KEY }}" \
           --env INPUT_EXPLANATION-IN="Korean" \
           ${{ env.image_url }} \
-          python3 ai_tutor/entrypoint.py >> $GITHUB_STEP_SUMMARY >> $GITHUB_STEP_SUMMARY
+          python3 ai_tutor/entrypoint.py >> $GITHUB_STEP_SUMMARY
       timeout-minutes: 2
 
     - name: upload artifacts
